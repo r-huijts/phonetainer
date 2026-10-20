@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Secrets
+.env
+.env.*
+*.p12
+*.mobileprovision
+
+# Raw output from scripts/portainer_spike.py (review and sanitize before committing as fixtures)
+spike-output/
+
+# Python
+__pycache__/
