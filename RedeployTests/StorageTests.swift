@@ -95,8 +95,11 @@ final class AppSettingsTests: XCTestCase {
         XCTAssertTrue(reloaded.isTailscaleAddress)
     }
 
-    func testDetectsTailscaleAddresses() {
-        let settings = AppSettings(defaults: UserDefaults(suiteName: "nl.r-huijts.phonetainer.tests.tailscale")!)
+    func testDetectsTailscaleAddresses() throws {
+        let suite = "nl.r-huijts.phonetainer.tests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let settings = AppSettings(defaults: defaults)
         settings.serverAddress = "http://100.101.102.103:9000"
         XCTAssertTrue(settings.isTailscaleAddress)
         settings.serverAddress = "https://192.168.1.10:9443"

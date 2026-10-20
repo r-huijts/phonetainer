@@ -61,13 +61,16 @@ private struct ActivityRow: View {
                     .font(.footnote)
                     .foregroundStyle(Theme.secondaryText)
             }
-            Text("\(entry.date, format: .relative(presentation: .named)) · took \(Duration.seconds(entry.duration.rounded()), format: .time(pattern: .minuteSecond))")
+            Text("\(when) · took \(took)")
                 .font(.footnote)
                 .foregroundStyle(Theme.secondaryText)
         }
         .padding(.vertical, 4)
         .accessibilityElement(children: .combine)
     }
+
+    private var when: String { entry.date.formatted(.relative(presentation: .named)) }
+    private var took: String { Duration.seconds(entry.duration.rounded()).formatted(.time(pattern: .minuteSecond)) }
 }
 
 #Preview {

@@ -28,7 +28,8 @@ enum DeviceAuthentication {
         let context = LAContext()
         var error: NSError?
         guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else {
-            throw error ?? LAError(.passcodeNotSet)
+            if let error { throw error }
+            throw LAError(.passcodeNotSet)
         }
         _ = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
     }

@@ -8,7 +8,8 @@ enum Fixture {
         let url = bundle.url(forResource: name, withExtension: "json")
             ?? bundle.url(forResource: name, withExtension: "json", subdirectory: "Fixtures")
         guard let url else {
-            throw XCTSkip("Fixture \(name).json is missing from the test bundle")
+            XCTFail("Fixture \(name).json is missing from the test bundle")
+            throw CocoaError(.fileNoSuchFile)
         }
         return try Data(contentsOf: url)
     }

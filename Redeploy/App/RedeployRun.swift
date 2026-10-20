@@ -26,7 +26,7 @@ final class RedeployRun: Identifiable {
         let state: State
     }
 
-    let id = UUID()
+    nonisolated let id = UUID()
     let stack: Stack
     let repullImages: Bool
     let prune: Bool
