@@ -98,3 +98,19 @@ python3 scripts/portainer_spike.py redeploy --stack-id <id> --confirm-name <thro
 `--confirm-name` matches the stack's name. Both write sanitized JSON to `spike-output/`
 (gitignored): env values, credentials, URLs, the Portainer hostname and IPv4 addresses are
 redacted, and endpoint snapshots are dropped. Read through it before using it as test fixtures.
+
+## Test fixtures
+
+`RedeployTests/Fixtures/*.json` are **synthetic**, built from Portainer's Go structs (2.39 shape,
+plus `stack-deploying.json` and `stack-error.json` in the newer asynchronous shape). Replace them
+with reviewed files from `spike-output/` after running the spike against the real instance, and
+note any decoding differences here.
+
+## How the app uses this
+
+- `LivePortainerClient` sends `X-API-Key` on every request over an ephemeral `URLSession`, with a
+  20 s timeout, or 15 minutes for the redeploy call.
+- `RedeployRun` fetches the stack fresh, sends the body above, polls `GET /api/stacks/{id}` every
+  3 s while `Status == 3`, fails on `Status == 4` with the last `DeploymentStatus` message, then
+  polls containers for up to 90 s.
+- Prune: on 2.39 the flag only affects Swarm stacks; on Compose it is ignored there.

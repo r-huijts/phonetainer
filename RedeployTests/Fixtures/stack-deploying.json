@@ -1,0 +1,20 @@
+{
+  "CurrentDeploymentInfo": { "ConfigHash": "9999999aaaabbbbcccc", "FileVersion": 0, "Version": 0 },
+  "DeploymentStartStatus": 1,
+  "DeploymentStatus": [ { "Status": 3, "Time": 1760000100 } ],
+  "EndpointId": 3,
+  "Env": [ { "name": "TZ", "value": "Europe/Amsterdam" } ],
+  "GitConfig": {
+    "ConfigFilePath": "docker-compose.yml",
+    "ConfigHash": "9999999aaaabbbbcccc",
+    "ReferenceName": "refs/heads/main",
+    "URL": "https://redacted.example.com/redacted"
+  },
+  "Id": 12,
+  "Name": "spike-test",
+  "Status": 3,
+  "Type": 2,
+  "UpdateDate": 1760000100,
+  "UpdatedBy": "admin",
+  "WorkflowID": 7
+}
