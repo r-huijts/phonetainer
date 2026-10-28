@@ -1,0 +1,12 @@
+{
+  "DeploymentStatus": [
+    { "Status": 3, "Time": 1760000100 },
+    { "Status": 4, "Time": 1760000130, "Message": "failed to deploy a stack: pull access denied for example/missing" }
+  ],
+  "EndpointId": 3,
+  "GitConfig": { "ConfigHash": "4f2c9a1e0b7d", "ReferenceName": "refs/heads/main" },
+  "Id": 12,
+  "Name": "spike-test",
+  "Status": 4,
+  "Type": 2
+}

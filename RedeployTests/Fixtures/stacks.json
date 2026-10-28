@@ -1,0 +1,60 @@
+[
+  {
+    "AdditionalFiles": null,
+    "AutoUpdate": null,
+    "CreatedBy": "admin",
+    "CreationDate": 1735689600,
+    "EndpointId": 3,
+    "EntryPoint": "docker-compose.yml",
+    "Env": [
+      { "name": "TZ", "value": "Europe/Amsterdam" },
+      { "name": "DB_PASSWORD", "value": "<redacted>" }
+    ],
+    "FromAppTemplate": false,
+    "GitConfig": {
+      "Authentication": { "Username": "<redacted>", "Password": "", "AuthorizationType": 0 },
+      "ConfigFilePath": "docker-compose.yml",
+      "ConfigHash": "4f2c9a1e0b7d33aa91c0e5f2d8b6a7c1e9f00d12",
+      "ReferenceName": "refs/heads/main",
+      "TLSSkipVerify": false,
+      "URL": "https://redacted.example.com/redacted"
+    },
+    "Id": 12,
+    "Name": "spike-test",
+    "Namespace": "",
+    "Option": { "Prune": false },
+    "ProjectPath": "/data/compose/12",
+    "ResourceControl": null,
+    "Status": 1,
+    "SwarmId": "",
+    "Type": 2,
+    "UpdateDate": 1760000000,
+    "UpdatedBy": "admin"
+  },
+  {
+    "EndpointId": 3,
+    "EntryPoint": "docker-compose.yml",
+    "Env": [],
+    "GitConfig": null,
+    "Id": 13,
+    "Name": "adguard",
+    "Status": 1,
+    "Type": 2,
+    "UpdateDate": 0
+  },
+  {
+    "EndpointId": 3,
+    "Env": null,
+    "GitConfig": {
+      "ConfigFilePath": "stack.yml",
+      "ConfigHash": "a91be03c55f2",
+      "ReferenceName": "refs/tags/v1.2.0",
+      "URL": "https://redacted.example.com/redacted"
+    },
+    "Id": 14,
+    "Name": "swarm-stack",
+    "Status": 2,
+    "SwarmId": "jpofkc0i9uo9wtx1zesuk649w",
+    "Type": 1
+  }
+]

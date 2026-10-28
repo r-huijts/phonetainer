@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 3,
+    "Name": "local",
+    "Type": 1,
+    "Status": 1,
+    "URL": "unix:///var/run/docker.sock",
+    "PublicURL": "",
+    "GroupId": 1,
+    "Snapshots": [ { "DockerSnapshotRaw": "<removed>", "RunningContainerCount": 12, "StackCount": 3 } ],
+    "TagIds": []
+  },
+  {
+    "Id": 5,
+    "Name": "nas",
+    "Type": 2,
+    "Status": 2,
+    "URL": "tcp://redacted.example.com/redacted"
+  }
+]
